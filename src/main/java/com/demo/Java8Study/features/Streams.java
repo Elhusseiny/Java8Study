@@ -2,9 +2,7 @@ package com.demo.Java8Study.features;
 
 import com.demo.Java8Study.dto.User;
 import com.demo.Java8Study.utils.Mapper;
-import org.springframework.boot.CommandLineRunner;
 
-import javax.swing.text.html.Option;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
@@ -13,7 +11,6 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class Streams  {
-
 
     public static void main(String... args) {
         // define a list
@@ -24,6 +21,10 @@ public class Streams  {
         users.add(new User().setAge(12).setName("ahmed"));
         // loop through it the AFTER 8
         System.out.println("************Double colon operator***********");
+        users.forEach(System.out::println);
+
+        System.out.println("************Setting fields by foreach***********");
+        users.forEach(it-> it.setAge(1));
         users.forEach(System.out::println);
 
         System.out.println("************Copying by getting the stream***********");
